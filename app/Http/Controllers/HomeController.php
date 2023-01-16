@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Movie; 
+use App\Models\Movie;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -11,14 +11,7 @@ class HomeController extends Controller
     {
 
         $all_movies = Movie::all();
-
-        dd($all_movies);
-
-        // $data = [
-        //     'title' => 'Titoli dei film',
-        //     'movies_all' => $all_movies
-        // ];
-
-        return view('welcome');
+        
+        return view('welcome', compact('all_movies'));
     }
 }
